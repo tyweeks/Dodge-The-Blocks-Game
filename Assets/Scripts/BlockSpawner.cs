@@ -8,6 +8,8 @@ public class BlockSpawner : MonoBehaviour
 
     public float timeBetweenWaves = 1f;
 
+    public float timeBetweenWavesChangeRate = .99f;
+
     private float timeToSpawn = 2f;
 
     void Update()
@@ -16,6 +18,7 @@ public class BlockSpawner : MonoBehaviour
         {
             SpawnBlocks();
             timeToSpawn = Time.time + timeBetweenWaves;
+            timeBetweenWaves = timeBetweenWaves * timeBetweenWavesChangeRate;
         }
     }
 

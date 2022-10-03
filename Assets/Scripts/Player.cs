@@ -3,6 +3,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float speed = 15f;
+    public float mapWidth = 6f;
 
     private Rigidbody2D rb;
 
@@ -15,7 +16,11 @@ public class Player : MonoBehaviour
     {
         float x = Input.GetAxis("Horizontal") * Time.fixedDeltaTime * speed;
 
-        rb.MovePosition(rb.position + Vector2.right * x);
+        Vector2 newPosition = rb.position + Vector2.right * x;
+
+        newPosition.x = Mathf.Clamp(newPosition.x, -mapWidth, mapWidth);
+
+        rb.MovePosition(newPosition);
 
     }
 }

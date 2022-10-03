@@ -222,6 +222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+  mapWidth: 6
 --- !u!50 &155356523
 Rigidbody2D:
   serializedVersion: 4
